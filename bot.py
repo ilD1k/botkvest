@@ -22,7 +22,13 @@ def start(message):
 def help(message):
     bot.send_message(message.chat.id, "Все сломал?? Вызывай старшего")
     bot.send_message(message.chat.id, 'Свяжись с [создателем](https://t.me/ildics)',
+
                      parse_mode='Markdown', )
+
+@bot.message_handler(content_types=["text"])
+def proverka(message):
+    bot.send_message(message.chat.id, "Я такого не знаю")
+
 
 def user_answer(message):
     if message.text == "1":
@@ -60,7 +66,7 @@ def vibor_dota(message):
         bot.send_message(message.chat.id, "ты чет не то написал")
         bot.register_next_step_handler(message, start)
 
-
+    
 def vibor(message):
     if message.text == "1":
         bot.send_message(message.chat.id ("Ты пришел домой и регнул доту"
@@ -75,6 +81,11 @@ def vibor(message):
     else:
         bot.send_message(message.chat.id, "ты чет не то написал")
         bot.register_next_step_handler(message, start)
+
+
+
+
+
 
 bot.polling()
 
