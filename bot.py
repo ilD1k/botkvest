@@ -58,6 +58,7 @@ def vibor_dota(message):
 
     else:
         bot.send_message(message.chat.id, "ты чет не то написал")
+        bot.register_next_step_handler(message, start)
 
 
 def vibor(message):
@@ -69,9 +70,11 @@ def vibor(message):
     if message.text == "2":
         bot.send_message(message.chat.id, "Ты успешно сходил к bro"
                                           " Квест пройден - ПОБЕДА")
+        bot.register_next_step_handler(message, start)
+
     else:
         bot.send_message(message.chat.id, "ты чет не то написал")
-
+        bot.register_next_step_handler(message, start)
 
 bot.polling()
 
