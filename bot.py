@@ -38,7 +38,7 @@ def user_answer(message):
                                           " 1) на седня хватит"
                                           " 2) регну еще ")
 
-        with open("team2.jpg.png", "rb") as photo:
+        with open("team2.jpg", "rb") as photo:
             bot.send_photo(message.chat.id, photo)
 
         bot.register_next_step_handler(message, vibor_dota)
